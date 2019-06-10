@@ -1,7 +1,6 @@
-let appID = 'See details for key'; //API key, can be found @ https://home.openweathermap.org/api_keys
+let appID = '1c34ba4143b918694e7cdc542798b25f'; //API key, can be found @ https://home.openweathermap.org/api_keys
 let units = 'imperial'; //units to be used
 let searchMethod; //search method will have either zip code or city name
-
 
 function getSearchMethdod(searchTerm) {
     if(searchTerm.length === 5 && Number.parseInt(searchTerm) + '' === searchTerm) { //checks length for length of 5, and checks to see if the number value is equal to string value 
@@ -24,25 +23,25 @@ function searchWeather(searchTerm) {
 function init(resultFromServer) {
     switch (resultFromServer.weather[0].main) { //changes background image based on the weather types
         case 'Clear':
-        document.body.style.backgroundImage = 'url("/images/clear.jpg")';
+        document.body.style.backgroundImage = 'url("./images/clear.jpg")';
         break;
 
         case 'Clouds':
-        document.body.style.backgroundImage = 'url("/images/cloudy.jpg")'; 
+        document.body.style.backgroundImage = 'url("./images/cloudy.jpg")'; 
         break;
 
         case 'Rain':
         case 'Drizzle':
         case 'Mist':
-        document.body.style.backgroundImage = 'url("/images/rain.jpg")'; 
+        document.body.style.backgroundImage = 'url("./images/rain.jpg")'; 
         break;
 
         case 'Thunderstorm':
-        document.body.style.backgroundImage = 'url("/images/storm.jpg")'; 
+        document.body.style.backgroundImage = 'url("./images/storm.jpg")'; 
         break;
 
         case 'Snow':
-        document.body.style.backgroundImage = 'url("/images/snow.jpg")'; 
+        document.body.style.backgroundImage = 'url("./images/snow.jpg")'; 
         break;
 
         default:
